@@ -1,10 +1,6 @@
 # name1    - Yuval Shmaryahu
-# username1 - shmaryahu1@mail.tau.ac.il
 # id1      - 208581702
 
-# name2    - Hadas Sayar
-# username2 - Hadassayar@mail.tau.ac.il
-# id2      - 209058510
 
 from random import randint
 
