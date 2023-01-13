@@ -1,4 +1,4 @@
-//# name1    - Yuval Shmaryahu
+//# name    - Yuval Shmaryahu
 //# mail     - yuvaldx321@gmail.com
 
 /**
