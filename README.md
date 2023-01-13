@@ -1,4 +1,4 @@
-decsriptions of functions and class:
+Decsription of functions and class:
 
 public int numberOftrees(): In this function we start from the left node and move to the next node and increasing the counter with plus until we get to the left node again 1. Therefore, if T – Number of trees the complexity is O(T). If the heap is nodes with no children then the complexity is O(N).
 
