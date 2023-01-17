@@ -2,8 +2,6 @@ Decsription of functions and class:
 
 public int numberOftrees(): In this function we start from the left node and move to the next node and increasing the counter with plus until we get to the left node again 1. Therefore, if T – Number of trees the complexity is O(T). If the heap is nodes with no children then the complexity is O(N).
 
-private HeapNode[] createarray(int cnt): the function receives an integer and creates an array with the same length of the cnt. Then, it iterates and in each place it puts a root from the heap. This function is being used only in consolidation and the only parameter that this function uses is T – Number of tree. Therefore the complexity is O(T). If the heap is nodes with no children then the complexity is O(N).
-
 private HeapNode[] create_main_array(int cnt): the function receives an integer cnt. Then, it iterates all over the trees in the heap and gets the node with the buggest rank. Then, it creates an array with the length of max+3 + (int)(Math.log(cnt)/Math.log(2)), when max is the biggest rank. This function is being used only in consolidation and the only parameter that this function uses is T – Number of tree. Therefore the complexity is O(T). If the heap is nodes with no children then the complexity is O(N).
 
 private HeapNode link(HeapNode a, HeapNode b): this function updates the pointers of the two nodes, so that in the end the smaller root will be the parent of the bigger root .O(1)
