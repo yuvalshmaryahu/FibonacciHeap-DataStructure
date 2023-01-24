@@ -7,9 +7,11 @@ private HeapNode[] create_main_array(int cnt): the function receives an integer 
 private HeapNode link(HeapNode a, HeapNode b): this function updates the pointers of the two nodes, so that in the end the smaller root will be the parent of the bigger root .O(1)
 
 private int fix_array (HeapNode[] array,HeapNode node): this function receives an array and a node. If the array item in position == node.rank is null, it sets the node as the item. Otherwise, it links the item and the node(new_node) and with recursion it goes to fix_array(array, new_node).O(N)
+
 private void sort_heap(HeapNode[] array): this function receives an array and iterate every item in the array. If needed that item pointers is changed so that in the end every node next field will be the the following bigger node rank. This function is being used only in consolidation and the array length is not more than O(N). Therefore the complexity is O(N).
 
 private void consolidation(): This function uses numberOftrees(), createarray(), create_main_array() and then it iterates every node in the heap and executes fix_array(). As explained in the class this is O(N). Then, we executes sort_heap(HeapNode[] array). Therefore the complexity is O(N).
+
 public void deleteMin(): This function delete the parents of all of the children of the minnode. Then, it changes the pointers of the first and last children with minnodeprev and minnodenext. Then it executes consolidation() and findmin. Therefore this O(N).
 
 private HeapNode insertforkMin(int key,HeapNode cnode): This function does the same as insert but it creates an node with value key, in addition to the normal insertion. Therefore it is O(1).
