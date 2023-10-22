@@ -1,20 +1,20 @@
 Decsription of functions and class:
 
-public int numberOftrees(): In this function we start from the left node and move to the next node and increasing the counter with plus until we get to the left node again 1. Therefore, if T – Number of trees the complexity is O(T). If the heap is nodes with no children then the complexity is O(N).
+numberOftrees(): In this function we start from the left node and move to the next node and increasing the counter with plus until we get to the left node again 1. Therefore, if T – Number of trees the complexity is O(T). If the heap is nodes with no children then the complexity is O(N).
 
-private HeapNode[] create_main_array(int cnt): the function receives an integer cnt. Then, it iterates all over the trees in the heap and gets the node with the buggest rank. Then, it creates an array with the length of max+3 + (int)(Math.log(cnt)/Math.log(2)), when max is the biggest rank. This function is being used only in consolidation and the only parameter that this function uses is T – Number of tree. Therefore the complexity is O(T). If the heap is nodes with no children then the complexity is O(N).
+HeapNode[] create_main_array(int cnt): the function receives an integer cnt. Then, it iterates all over the trees in the heap and gets the node with the buggest rank. Then, it creates an array with the length of max+3 + (int)(Math.log(cnt)/Math.log(2)), when max is the biggest rank. This function is being used only in consolidation and the only parameter that this function uses is T – Number of tree. Therefore the complexity is O(T). If the heap is nodes with no children then the complexity is O(N).
 
-private HeapNode link(HeapNode a, HeapNode b): this function updates the pointers of the two nodes, so that in the end the smaller root will be the parent of the bigger root .O(1)
+HeapNode link(HeapNode a, HeapNode b): this function updates the pointers of the two nodes, so that in the end the smaller root will be the parent of the bigger root .O(1)
 
-private int fix_array (HeapNode[] array,HeapNode node): this function receives an array and a node. If the array item in position == node.rank is null, it sets the node as the item. Otherwise, it links the item and the node(new_node) and with recursion it goes to fix_array(array, new_node).O(N)
+fix_array (HeapNode[] array,HeapNode node): this function receives an array and a node. If the array item in position == node.rank is null, it sets the node as the item. Otherwise, it links the item and the node(new_node) and with recursion it goes to fix_array(array, new_node).O(N)
 
-private void sort_heap(HeapNode[] array): this function receives an array and iterate every item in the array. If needed that item pointers is changed so that in the end every node next field will be the the following bigger node rank. This function is being used only in consolidation and the array length is not more than O(N). Therefore the complexity is O(N).
+sort_heap(HeapNode[] array): this function receives an array and iterate every item in the array. If needed that item pointers is changed so that in the end every node next field will be the the following bigger node rank. This function is being used only in consolidation and the array length is not more than O(N). Therefore the complexity is O(N).
 
 private void consolidation(): This function uses numberOftrees(), createarray(), create_main_array() and then it iterates every node in the heap and executes fix_array(). As explained in the class this is O(N). Then, we executes sort_heap(HeapNode[] array). Therefore the complexity is O(N).
 
-public void deleteMin(): This function delete the parents of all of the children of the minnode. Then, it changes the pointers of the first and last children with minnodeprev and minnodenext. Then it executes consolidation() and findmin. Therefore this O(N).
+deleteMin(): This function delete the parents of all of the children of the minnode. Then, it changes the pointers of the first and last children with minnodeprev and minnodenext. Then it executes consolidation() and findmin. Therefore this O(N).
 
-private HeapNode insertforkMin(int key,HeapNode cnode): This function does the same as insert but it creates an node with value key, in addition to the normal insertion. Therefore it is O(1).
+insertforkMin(int key,HeapNode cnode): This function does the same as insert but it creates an node with value key, in addition to the normal insertion. Therefore it is O(1).
 public static int[] kMin(FibonacciHeap H, int k): This function create an array with the length k. then, it creates a new Fibonacci heap (support heap). We iterate k times and in each iteration we find the min from the support heap. Then we insert to the heap the children of the key from the original heap and executes delete min. therefore the complexity is O(k*DEG(k))
 
 isEmpty(): Returns true if and only if the heap is empty, by checking if the minimum Node is null.
